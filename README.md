@@ -1,28 +1,32 @@
-# Basic Build with NPM scripts
-This is a project scaffolding and build tool for the TIY Austin Front-End Engineering course. Feel free to use and enjoy! Feedback and PRs welcome!
+#Bookish
 
-## Features
-- A bare bones scaffolding for an SPA, without any libraries built in
-- A static server for serving up your dev environment via http
-- `app` directory for development, preloaded with an `index.html`, `scripts/entry.js`, `scss/main.scss` and `assets/`
-- `dist` directory for deployable code
-- es2015 and babel, including module syntax
-- mocha test runner, for support testing modules and react components with es2015 and jsx syntax using enzyme and the chai assertion library
-- sass (.scss)
 
-## Installation
-- Clone this repo (or fork then clone, if you prefer)
-- Remove the git history by running `rm -rf .git`
-- Set up a new git repo
-- Run `npm install`
-- if you get permission errors you may need to run `sudo npm install` to install a couple global dependencies
+```html
+<section id="todoapp">
+    <header id="header">
+      <h1>todos</h1>
+      <input id="new-todo" placeholder="What needs to be done?" autofocus>
+    </header>
+    <section id="main">
+      <input id="toggle-all" type="checkbox">
+      <label for="toggle-all">Mark all as complete</label>
+      <ul id="todo-list"></ul>
+    </section>
+    <footer id="footer"></footer>
+  </section>
+  <div id="info">
+    <p>Double-click to edit a todo</p>
+    <p>Written by <a href="https://github.com/addyosmani">Addy Osmani</a></p>
+    <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+  </div>
+```
 
-## Use
-- `npm install` will scaffold your project AND start the dev server
-- `npm start` will start the dev server and watch for changes
-- `npm test` will run any test files included in the test folder
-- `npm run deploy` will push the content of `dist/` to gh-pages
-- When the server is running, your site will be live on [http://localhost:8080/](http://localhost:8080/)
+```html
 
-## Dependencies
-- `sass` [install guide here](http://sass-lang.com/install)
+    <div class="view">
+      <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+      <label><%= title %></label>
+      <button class="destroy"></button>
+    </div>
+    <input class="edit" value="<%= title %>">
+```
