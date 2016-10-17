@@ -1,17 +1,20 @@
 import Backbone from 'backbone'
 import $ from 'jquery'
-import todo from '../models/todo'
-import todos from '../collections/todos'
+import Todo from '../models/Todo'
+import todos from '../collections/Todos'
 
 const ItemView = Backbone.View.extend({
+  initialize: function() {
+    console.log( this )
+  },
 
   tagName: 'li',
   className: 'todo-item',
 
   template: function() {
     return `
-        <label>${this.model.title}</label>
-        <button class="destroy"></button>
+      <p>${this.model.get('title')}</p>
+      <button class="destroy"></button>
     `
   },
 
@@ -21,7 +24,7 @@ const ItemView = Backbone.View.extend({
   },
 
 })
-// let item = new ItemView()
+
 export default ItemView
 // Authorization: Kinvey 10ec626d-70ac-4ca6-8a6e-a789a37bcfcf.g+MN06e9pGk8DvGx8iYLuBWsrEJOI6rhkS6CZG+da9M=
 
