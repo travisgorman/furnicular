@@ -1,9 +1,9 @@
 import Backbone from 'backbone'
 import $ from 'jquery'
-// import settings from '../settings'
 import ItemView from '../views/ItemView'
 import todos from '../collections/todos'
 import Todo from '../models/Todo'
+
 
 const AppView = Backbone.View.extend({
   initialize: function(){
@@ -13,6 +13,14 @@ const AppView = Backbone.View.extend({
 
   className: 'todoapp',
   tagName: 'section',
+  events: {
+    'click #submit-new' : 'addNew'
+  },
+
+  addNew(e) {
+    let title = $('input[name="new-todo"]').val()
+    todos.addNew(title)
+  },
 
   template: function() {
     return `
@@ -20,8 +28,11 @@ const AppView = Backbone.View.extend({
          <h1>DO THINGS</h1>
          <input
            class="new-todo"
+           id="new-todo"
+           name="new-todo"
            placeholder="What do?"
            autofocus>
+          <button class="submit-new" id="submit-new">Do It!</button>
        </header>
 
       <section class="main">
@@ -56,10 +67,3 @@ const AppView = Backbone.View.extend({
 
 })
 export default AppView
-
-// "headers": {
-//           "Content-Type":"application/json",
-//           "X-Kinvey-API-Version":"3",
-//           "X-Kinvey-Request-Id":"4836616f7910463c998fceb4dcbeda8b",
-//           "X-Powered-By":"Express",
-//           "Authorization": "Kinvey 10ec626d-70ac-4ca6-8a6e-a789a37bcfcf.g+MN06e9pGk8DvGx8iYLuBWsrEJOI6rhkS6CZG+da9M=",

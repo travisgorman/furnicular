@@ -3,17 +3,19 @@
   font-family: sans-serif; }
 
 section.todoapp {
-  background: peru;
-  width: 550px;
+  background: #0D5A5B;
+  width: 450px;
   margin: 0 auto;
   border: 1px #888 solid; }
+  section.todoapp ul {
+    list-style: none; }
 
 header {
   width: 100%;
   text-align: center;
   margin-bottom: .5rem; }
   header input {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
     font-size: 1rem;
     padding: .5rem; }
@@ -21,6 +23,8 @@ header {
 section.main {
   border: 1px #888 solid;
   padding: .5rem; }
+  section.main li.todo-item {
+    background: aliceblue; }
   section.main input {
     position: relative;
     top: -30px; }

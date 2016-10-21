@@ -6,10 +6,23 @@ import Todo from '../models/Todo'
 const Todos = Backbone.Collection.extend({
   url: `http://baas.kinvey.com/appdata/${settings.appKey}/todos`,
   model: Todo,
+  
+  addNew(title) {
+    this.create({
+      title: title,
+      completed: false
+    }, {
+        success(model, response){
+          console.log('SUCCESS:', model, response)
+      },
+        error(model, response) {
+          console.log('ERROR:', model, response )
+      }
+    })
+  },
+
+
 })
 
 let todos = new Todos()
 export default todos
-
-// Authorization: Kinvey 10ec626d-70ac-4ca6-8a6e-a789a37bcfcf.g+MN06e9pGk8DvGx8iYLuBWsrEJOI6rhkS6CZG+da9M=
-

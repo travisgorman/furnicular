@@ -4,10 +4,13 @@
 }
 
 section.todoapp {
-  background: peru;
-  width: 550px;
+  background: #0D5A5B;
+  width: 450px;
   margin: 0 auto;
   border: 1px #888 solid;
+  ul {
+    list-style: none;
+  }
 }
 
 header {
@@ -15,7 +18,7 @@ header {
   text-align: center;
   margin-bottom: .5rem;
   input {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
     font-size: 1rem;
     padding: .5rem;
@@ -24,6 +27,10 @@ header {
 section.main {
   border: 1px #888 solid;
   padding: .5rem;
+
+  li.todo-item {
+    background: aliceblue;
+  }
   input {
     position: relative;
     top: -30px;

@@ -8,7 +8,7 @@ const Nav = Backbone.View.extend({
   className: 'header-nav',
   template: function() {
     return `
-      <a href="#logout">Logout</a>
+      <a href="#logout">Get Out</a>
     `
   },
   render: function() {
