@@ -5,7 +5,7 @@ import router from './router'
 import session from './models/session'
 
 
-$(document).ajaxSend( (e, xhr) => {
+$(document).ajaxSend( function(e, xhr) {
   if (localStorage.getItem('authtoken')) {
     xhr.setRequestHeader('Authorization', `Kinvey ${localStorage.getItem('authtoken')}`)
   } 

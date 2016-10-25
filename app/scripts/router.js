@@ -5,6 +5,7 @@ import AppView from './views/AppView'
 import LoginView from './views/LoginView'
 import SignupView from './views/SignupView'
 import HeaderView from './views/HeaderView'
+import settings from './settings'
 
 const Router = Backbone.Router.extend({
   routes: {
